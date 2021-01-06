@@ -1,0 +1,11 @@
+notes:
+
+NX/Angular uses Jest/Cypress instead of Karma
+
+The following nx commands don't need npx if nx is installed globally
+
+`npx nx serve` // same as `ng serve` except we don't leverage the caching benifits offered by nx
+`npx nx list` // Lists some plugins that are possbile to install
+
+NX allows for us to keep together our angular project and node project
+
