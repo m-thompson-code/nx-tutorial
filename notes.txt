@@ -14,3 +14,6 @@ NX allows for us to keep together our angular project and node project
 `npx nx g @nrwl/nest:app <node project name> --frontendProject=<angular app prefix>` // generate nest node project for angular project
 
 `npx nx g @nrwl/workspace:lib <lib name>` // generates shareable lib (all apps can access this code)
+// Can also be used to generate shareable angular components
+
+
