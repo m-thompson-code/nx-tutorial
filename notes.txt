@@ -9,3 +9,7 @@ The following nx commands don't need npx if nx is installed globally
 
 NX allows for us to keep together our angular project and node project
 
+`run npx nx list <plugin>` // Shows you if plugin is installed, and how to install it 
+
+`npx nx g @nrwl/nest:app <node project name> --frontendProject=<angular app prefix>` // generate nest node project for angular project
+

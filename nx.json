@@ -19,12 +19,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "ZDIzYzRiNDUtMWVlOS00NTYzLTkxNGYtNmU2ZGM3NjNmMTMyfHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -36,9 +31,10 @@
     },
     "todos-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "todos"
-      ]
+      "implicitDependencies": ["todos"]
+    },
+    "api": {
+      "tags": []
     }
   }
 }

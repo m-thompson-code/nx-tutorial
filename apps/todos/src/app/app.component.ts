@@ -15,8 +15,8 @@ interface Todo {
 export class AppComponent implements OnInit, OnDestroy {
   public todos: Todo[] = [];
 
-  private _sub?: Subscription;
-  private _sub2?: Subscription;
+  private _sub?: Subscription;// Not really needed since the subscriptions should set completed/finished to true and no longer be active, but these subscriptions could still lead to a race condition, and why not
+  private _sub2?: Subscription;// Not really needed since the subscriptions should set completed/finished to true and no longer be active, but these subscriptions could still lead to a race condition, and why not
 
   constructor(private httpClient: HttpClient) {
   }
@@ -28,12 +28,14 @@ export class AppComponent implements OnInit, OnDestroy {
   public fetch(): Subscription {
     this._sub?.unsubscribe();
 
-    return this.httpClient.get<Todo[]>('').subscribe(todos => {
+    return this.httpClient.get<Todo[]>('/api/todos').subscribe(todos => {
       this.todos = todos;
     });
   }
 
   public addTodo(): void {
+    this._sub2?.unsubscribe();
+
     this._sub2 = this.httpClient.post('/api/addTodo', {}).subscribe(() => {
       this.fetch();
     });
