@@ -28,7 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public fetch(): Subscription {
     this._sub?.unsubscribe();
 
-    return this.httpClient.get<Todo[]>('/api/todos').subscribe(todos => {
+    return this.httpClient.get<Todo[]>('/updated-api/todos').subscribe(todos => {
       this.todos = todos;
     });
   }
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public addTodo(): void {
     this._sub2?.unsubscribe();
 
-    this._sub2 = this.httpClient.post('/api/addTodo', {}).subscribe(() => {
+    this._sub2 = this.httpClient.post('/updated-api/addTodo', {}).subscribe(() => {
       this.fetch();
     });
   }
