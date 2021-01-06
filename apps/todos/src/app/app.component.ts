@@ -13,11 +13,12 @@ import { Todo } from '@myorg/data';
 export class AppComponent implements OnInit, OnDestroy {
   public todos: Todo[] = [];
 
-  private _sub?: Subscription;// Not really needed since the subscriptions should set completed/finished to true and no longer be active, but these subscriptions could still lead to a race condition, and why not
-  private _sub2?: Subscription;// Not really needed since the subscriptions should set completed/finished to true and no longer be active, but these subscriptions could still lead to a race condition, and why not
+  // Not really needed since the subscriptions should set completed/finished to true and no longer be active.
+  // But these subscriptions could still lead to a race condition, and why not
+  private _sub?: Subscription;
+  private _sub2?: Subscription;
 
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) { }
 
   public ngOnInit(): void {
     this._sub = this.fetch();

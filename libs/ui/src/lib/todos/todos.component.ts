@@ -8,11 +8,12 @@ import { Todo } from '@myorg/data';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
-  @Input() todos: Todo[];
+  @Input() todos: Todo[] = [];
 
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    // Just adding this here to avoid lint error about declaring empty ngOnInit
+    this.todos = this.todos || [];
   }
-
 }

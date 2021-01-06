@@ -17,3 +17,10 @@ NX allows for us to keep together our angular project and node project
 // Can also be used to generate shareable angular components
 
 `npm run dep-graph` // Shows a dependency graph for the NX apps
+
+`npx nx build <app prefix>`
+
+`npx nx run-many --target=build --projects=<app prefix 1>,<<app prefix 2>`
+
+`npx nx lint <app prefix> --with-deps` // lints app and its deps (uses/generates cached lint results)
+
