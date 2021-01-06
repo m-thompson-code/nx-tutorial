@@ -3,9 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Subscription } from 'rxjs';
 
-interface Todo {
-  title: string;
-}
+import { Todo } from '@myorg/data';
 
 @Component({
   selector: 'myorg-root',
