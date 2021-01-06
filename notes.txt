@@ -1,6 +1,10 @@
 NX notes:
 
+`npx create-nx-workspace@latest` // Create new NX workspace
+
 NX/Angular uses Jest/Cypress instead of Karma
+
+`npx nx e2e todos-e2e --watch` // e2e testing
 
 The following nx commands don't need npx if nx is installed globally
 
@@ -23,4 +27,12 @@ NX allows for us to keep together our angular project and node project
 `npx nx run-many --target=build --projects=<app prefix 1>,<<app prefix 2>`
 
 `npx nx lint <app prefix> --with-deps` // lints app and its deps (uses/generates cached lint results)
+
+`npm run affected:apps` // test affected apps to changes compared to base git branch (main or master by default) (--base and --head are optional, but can set comparision)
+`npm run affected:libs` // test affected libs
+`npx nx affected:test` // To retest only the projects affected by change
+
+`npm run affected:test -- --only-failed` // retest only failed projects
+
+`nx affected: test --all` // test all apps/libs
 

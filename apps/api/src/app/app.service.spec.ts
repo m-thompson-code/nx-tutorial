@@ -14,8 +14,14 @@ describe('AppService', () => {
   });
 
   describe('getData', () => {
-    it('should return "Welcome to api!"', () => {
-      expect(service.getData()).toEqual({ message: 'Welcome to api!' });
+
+    it('should return todos', () => {
+      expect(service.getData()).toHaveLength(2);
+      service.addTodo()
+      expect(service.getData()).toHaveLength(3);
     });
+    // it('should return "Welcome to api!"', () => {
+    //   expect(service.getData()).toEqual({ message: 'Welcome to api!' });
+    // });
   });
 });
