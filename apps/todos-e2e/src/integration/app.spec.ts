@@ -1,13 +1,20 @@
-import { getGreeting } from '../support/app.po';
+import { getTodos, getAddTodoButton } from '../support/app.po';
 
 describe('todos', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  it('should display todos', () => {
+    // Expect 2 at first
+    getTodos().should((t) => {
+      return expect(t.length).equal(2);
+    });
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to todos!');
+    // Add one more
+    getAddTodoButton().click();
+
+    // Expect 3 now
+    getTodos().should((t) => {
+      return expect(t.length).equal(3);
+    });
   });
 });
